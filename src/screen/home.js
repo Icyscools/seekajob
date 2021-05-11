@@ -1,12 +1,24 @@
 import React from 'react'
-// import './style/home.css';
 
+const texth1 = {
+  fontSize : '80px',
+  marginTop : '1px',
+  marginLeft : '45px'
+}
+
+const inputsearch = {
+  fontSize : '20px',
+}
 class Home extends React.Component {
     render() {
       return (
-        <div>Seekajob
+        <div style={{
+          backgroundImage: "url(/w3.jpg)",
+          backgroundSize : 'cover'
+          }}>
+          <h1 style={texth1}>Seekajob</h1>
           <form id='search' name='search'>
-          <input type='text' id='search' name='search' placeholder='search'></input>
+          <input style={inputsearch} type='text' id='search' name='search' placeholder='search'></input>
           </form>
 
         </div>

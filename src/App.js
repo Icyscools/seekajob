@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-// import Home from './screen/home';
-import Login from './screen/login'
+import Home from './screen/home';
+// import Login from './screen/login'
 
 function App() {
   return (
     <div className="App">
-      <Login />
+      <Home />
     {/* //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
     //     <p>
