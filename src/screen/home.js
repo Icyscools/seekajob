@@ -9,6 +9,7 @@ const texth1 = {
 const inputsearch = {
   fontSize : '20px',
 }
+
 class Home extends React.Component {
     render() {
       return (
