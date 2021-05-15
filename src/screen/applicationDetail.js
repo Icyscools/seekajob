@@ -1,0 +1,82 @@
+import React from 'react'
+import { Navbar,Nav, Row , Col , Container } from 'react-bootstrap';
+// import { ReactSearchAutocomplete } from 'react-search-autocomplete'
+// import Button from '@material-ui/core/Button'
+const txt1 = {
+  fontSize : '2em',
+  marginLeft : '2%',
+  marginTop : '2%'
+}
+
+const buttonlogin = {
+  fontSize : '20px',
+  marginLeft : '1450px',
+  borderRadius : 15,
+  borderWidth : 1,
+  backgroundColor : 'lightBlue',
+  width : '75px'
+}
+
+const col = {
+    marginTop: '20px'
+}
+  
+class AppDetail extends React.Component {
+    render() {
+      return (
+        <div>
+            {/* <div style={{position: 'absolute', height: '10px'}}><button style={buttonlogin}> login </button></div> */}
+            <Navbar bg="light" variant="light">
+                <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                <Nav className="mr-auto">
+                <Nav.Link href="#home">Home</Nav.Link>
+                <Nav.Link href="#features">Features</Nav.Link>
+                <Nav.Link href="#pricing">Pricing</Nav.Link>
+                </Nav>
+            </Navbar>
+            <h2 style={txt1}>Front-end Developer</h2>
+            <div style={{position: 'absolute' , width: '20%',height: '600px' , marginLeft:'2%' , marginTop: '4%', color:'black'}}>
+                {/* ที่ใส่รูปโปรไฟล์ */}
+            </div>
+            <div style={{position: 'absolute' , width: '60%',height: '600px' , right:'2%' , marginTop: '4%', color:'black'}}>
+                <Container>
+                    <Row>
+                        <Col style={col}>Fullname</Col>
+                        <Col style={col}>Qualification</Col>
+                    </Row>
+                    <Row>
+                        <Col style={col}>User1</Col>
+                        <Col style={col}>User Qualification</Col>
+                    </Row>
+                    
+                    <Row>
+                        <Col style={col}>Email</Col>
+                        <Col style={col}>Experience</Col>
+                    </Row>
+                    <Row>
+                        <Col style={col}>user1@gmail.com</Col>
+                        <Col style={col}>User Experience</Col>
+                    </Row>
+                    <Row>
+                        <Col style={col}>Phone</Col>
+                        <Col style={col}>Resume</Col>
+                    </Row>
+                    <Row>
+                        <Col style={col}>0991234567</Col>
+                        <Col style={col}>Download</Col>
+                    </Row>
+                    <Row>
+                        <Col style={col}>Bio</Col>
+                        <Col style={col}></Col>
+                    </Row>
+                    <Row>
+                        <Col style={col}>user bio...</Col>
+                        <Col style={col}></Col>
+                    </Row>
+                </Container>
+            </div>
+        </div>
+      )
+    }
+  }
+export default AppDetail

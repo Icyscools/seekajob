@@ -1,13 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
 import Home from './screen/home';
+import JobList from './screen/jobList';
+import AppDetail from './screen/applicationDetail';
+import AddJob from './screen/addJob';
+
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import Login from './screen/login'
 // import CreateUser from './screen/createUser'
 
 function App() {
   return (
+    
     <div className="App">
-      <Home />
+      <AddJob />
     {/* //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
     //     <p>
