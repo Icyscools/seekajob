@@ -2,6 +2,7 @@ import React from 'react'
 import { Navbar,Nav, Row , Col , Container, Form } from 'react-bootstrap';
 // import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 import Button from '@material-ui/core/Button'
+
 const txth1 = {
   position:'absolute',
   fontSize : '3em',
@@ -36,8 +37,8 @@ class AddJob extends React.Component {
                 </Nav>
             </Navbar>
             <div style={{
-                backgroundImage: "url(/si2.jpg)",
-                width:'100%',
+                backgroundImage: "url(/si1.jpg)",
+                width:'cover',
                 height:'200px',
                 resizeMode: 'stretch'
             }}>

@@ -1,8 +1,10 @@
 import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Form } from 'react-bootstrap';
+
 
 const styleinput = {
   fontSize : '18px',
+  marginLeft : '200px'
 }
 
 const stylebuttonuser = {
@@ -27,15 +29,16 @@ const stylebuttoncreate = {
   borderRadius : 15,
   borderWidth : 1,
   borderColor: 'black',
-  width : '250px'
+  width : '250px',
+  marginLeft : '700px'
 }
 
 class CreateUser extends React.Component {
     render() {
       return (
-        <div>
-          {/* <Container>
-            <Row xs={2} md={6}>
+        <div style={{marginTop : '100px'}}>
+          <Container>
+            <Row>
               <Col>
                 <form id='name' name='name'>
                 <input style={styleinput} type='text' id='name' name='name' placeholder='name'></input>
@@ -46,6 +49,16 @@ class CreateUser extends React.Component {
                 <form id='email' name='email'>
                 <input style={styleinput} type='email' id='email' name='email' placeholder='e-mail'></input>
                 </form><br />
+                
+              </Col>
+              <Col>
+                <h2>Who are you?</h2><br />
+                <button style={stylebuttonuser}>Worker</button>{' '}
+                <button style={stylebuttonuser}>Company</button>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
                 <form id='password' name='password'>
                 <input style={styleinput} type='password' id='password' name='password' placeholder='password'></input>
                 </form><br />
@@ -56,17 +69,11 @@ class CreateUser extends React.Component {
                 <textarea style={styleinput} id='bio' name='bio' placeholder='bio'></textarea>
                 </form><br />
               </Col>
-
               <Col>
-                <h2>Who are you?</h2><br />
-                <button style={stylebuttonuser}>Worker</button>{' '}
-                <button style={stylebuttonuser}>Company</button>
-              </Col>
-              <Col>
-                
+                kdfkdo
               </Col>
             </Row>
-          </Container> */}
+          </Container>
           <br /><button style={stylebuttoncreate} type='submit' name='create_account'>Create Account</button>
         </div>
       );

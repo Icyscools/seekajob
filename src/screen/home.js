@@ -1,13 +1,17 @@
 import React from 'react'
+import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 
 const texth1 = {
   fontSize : '80px',
-  marginTop : '1px',
-  marginLeft : '45px'
+  marginTop : '2px',
+  marginLeft : '100px'
 }
 
-const inputsearch = {
-  fontSize : '20px',
+const searchstyle = {
+  position: 'absolute' , 
+  width: '400px' , 
+  marginLeft:'550px' , 
+  marginTop: '2%'
 }
 
 const buttonlogin = {
@@ -25,12 +29,22 @@ class Home extends React.Component {
         <div><button style={buttonlogin}> login </button>
           <div style={{
             backgroundImage: "url(/w3.jpg)",
-            backgroundSize : 'cover'
+            backgroundSize : 'cover',
+            height:'240px',
             }}>
             <h1 style={texth1}>Seekajob</h1>
-            <form id='search' name='search'>
-            <input style={inputsearch} type='text' id='search' name='search' placeholder='search'></input>
-            </form>
+            <div style={searchstyle}>
+                <ReactSearchAutocomplete
+                    style={{display: 'inline'}}
+                    placeholder="search"
+                    // items={items}
+                    // onSearch={handleOnSearch}
+                    // onHover={handleOnHover}
+                    // onSelect={handleOnSelect}
+                    // onFocus={handleOnFocus}
+                    autoFocus
+                />
+            </div>
           </div>
         </div>
       );
