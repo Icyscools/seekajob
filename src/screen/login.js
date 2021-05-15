@@ -40,7 +40,9 @@ class Login extends React.Component {
       return (
         <div style={{
           backgroundImage: "url(/si2.jpg)",
-          backgroundSize : 'cover'
+          backgroundSize : 'cover',
+          height : '720px'
+
           }}>
           <form id='email' name='email'>
           <input style={textinputemail} type='text' id='email' name='email' placeholder='e-mail'></input>
@@ -50,7 +52,6 @@ class Login extends React.Component {
           </form>
           <button style={buttonlogin} name='login'>Log in</button><br /><br />
           <text style={textt}>You don't have an account ?</text><br />
-          .<br />.<br />.<br />.<br />.<br />
         </div>
       );
     }

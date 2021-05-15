@@ -38,7 +38,8 @@ class AddJob extends React.Component {
             </Navbar>
             <div style={{
                 backgroundImage: "url(/si1.jpg)",
-                width:'cover',
+                backgroundSize : 'cover',
+                width:'1535px',
                 height:'200px',
                 resizeMode: 'stretch'
             }}>

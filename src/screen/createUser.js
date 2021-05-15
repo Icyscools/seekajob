@@ -4,7 +4,8 @@ import { Container, Row, Col, Form } from 'react-bootstrap';
 
 const styleinput = {
   fontSize : '18px',
-  marginLeft : '200px'
+  marginLeft : '350px',
+  marginTop : '5px'
 }
 
 const stylebuttonuser = {
@@ -16,14 +17,15 @@ const stylebuttonuser = {
   borderRadius : 15,
   borderWidth : 1,
   borderColor: 'black',
-  width : '140px'
+  width : '140px',
+  marginLeft : '30px'
 }
 
 const stylebuttoncreate = {
   fontSize : '25px',
   backgroundColor: "white",
   padding: "5px",
-  marginTop : '100px',
+  marginTop : '40px',
   paddingTop : 14,
   paddingBottom : 14,
   borderRadius : 15,
@@ -36,12 +38,18 @@ const stylebuttoncreate = {
 class CreateUser extends React.Component {
     render() {
       return (
-        <div style={{marginTop : '100px'}}>
+        <div style={{
+          // marginTop : '100px',
+          backgroundImage: "url(/si3.jpg)",
+          backgroundSize : 'cover',
+          height : '720px'
+
+          }}>
           <Container>
             <Row>
               <Col>
                 <form id='name' name='name'>
-                <input style={styleinput} type='text' id='name' name='name' placeholder='name'></input>
+                <input style={{marginTop : '120px', fontSize : '18px', marginLeft : '350px', }} type='text' id='name' name='name' placeholder='name'></input>
                 </form><br />
                 <form id='username' name='username'>
                 <input style={styleinput} type='text' id='username' name='username' placeholder='username'></input>
@@ -52,7 +60,7 @@ class CreateUser extends React.Component {
                 
               </Col>
               <Col>
-                <h2>Who are you?</h2><br />
+                <h2 style={{marginTop : '110px', marginLeft : '30px', }}>Who are you?</h2><br />
                 <button style={stylebuttonuser}>Worker</button>{' '}
                 <button style={stylebuttonuser}>Company</button>
               </Col>
@@ -70,7 +78,7 @@ class CreateUser extends React.Component {
                 </form><br />
               </Col>
               <Col>
-                kdfkdo
+                choose type
               </Col>
             </Row>
           </Container>

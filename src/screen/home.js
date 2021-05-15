@@ -1,5 +1,6 @@
 import React from 'react'
-import { ReactSearchAutocomplete } from 'react-search-autocomplete'
+import { ReactSearchAutocomplete } from 'react-search-autocomplete';
+import { Navbar,Nav, Row , Col , Container, Form, Button } from 'react-bootstrap';
 
 const texth1 = {
   fontSize : '80px',
@@ -26,7 +27,12 @@ const buttonlogin = {
 class Home extends React.Component {
     render() {
       return (
-        <div><button style={buttonlogin}> login </button>
+        <div>
+          <Navbar>
+            <Form inline>
+              <Button style={{marginLeft : '1440px'}} type="submit">Login</Button>
+            </Form>
+          </Navbar>
           <div style={{
             backgroundImage: "url(/w3.jpg)",
             backgroundSize : 'cover',

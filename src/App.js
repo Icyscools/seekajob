@@ -5,6 +5,7 @@ import JobList from './screen/jobList';
 import AppDetail from './screen/applicationDetail';
 import AddJob from './screen/addJob';
 import CreateUser from './screen/createUser';
+import AddApplication from './screen/addApplication';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,7 +16,7 @@ function App() {
   return (
     
     <div className="App">
-      <CreateUser />
+      <Home />
     {/* //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
     //     <p>
