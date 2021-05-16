@@ -35,7 +35,7 @@ class Home extends React.Component {
       return (
         <div>
           <Navbar bg="light" variant="light">
-            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+            <Navbar.Brand href="#home">Home</Navbar.Brand>
             <Nav className="mr-auto">
             </Nav>
             <Form inline>
