@@ -1,10 +1,10 @@
 import React from 'react'
 import { Navbar,Nav, Row , Col , Container } from 'react-bootstrap';
 // import { ReactSearchAutocomplete } from 'react-search-autocomplete'
-// import Button from '@material-ui/core/Button'
+import Button from '@material-ui/core/Button'
 const txt1 = {
   fontSize : '2em',
-  marginLeft : '2%',
+  marginLeft : '5%',
   marginTop : '2%'
 }
 
@@ -18,6 +18,7 @@ const buttonlogin = {
 }
 
 const col = {
+    fontSize : '18px',
     marginTop: '20px'
 }
   
@@ -35,10 +36,10 @@ class AppDetail extends React.Component {
                 </Nav>
             </Navbar>
             <h2 style={txt1}>Front-end Developer</h2>
-            <div style={{position: 'absolute' , width: '20%',height: '600px' , marginLeft:'2%' , marginTop: '4%', color:'black'}}>
+            <div style={{position: 'absolute' , width: '20%',height: '400px' , marginLeft:'5%' , marginTop: '4%', color:'black'}}>
                 {/* ที่ใส่รูปโปรไฟล์ */}
             </div>
-            <div style={{position: 'absolute' , width: '60%',height: '600px' , right:'2%' , marginTop: '4%', color:'black'}}>
+            <div style={{position: 'absolute' , width: '60%',height: '400px' , right:'2%' , marginTop: '4%', color:'black'}}>
                 <Container>
                     <Row>
                         <Col style={col}>Fullname</Col>
@@ -74,6 +75,10 @@ class AppDetail extends React.Component {
                         <Col style={col}></Col>
                     </Row>
                 </Container>
+
+                <Button variant="outlined"style={{position:'absolute',right:'10%',top:'100%'}}>Make Appointment</Button>
+                <Button variant="outlined"style={{position:'absolute',right:'50%',top:'100%'}}>Rejected</Button>
+                <Button variant="outlined"style={{position:'absolute',right:'85%',top:'100%'}}>Approved</Button>
             </div>
         </div>
       )

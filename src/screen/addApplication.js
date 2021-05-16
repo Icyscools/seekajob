@@ -15,17 +15,13 @@ class AddApplication extends React.Component {
             <div style={{
                 backgroundImage: "url(/aa.jpg)",
                 backgroundSize : 'cover',
-                width:'1535px',
+                width:'100%',
                 height:'200px',
             }}>
-                <h1 style={{marginLeft : '500px', fontSize : '7em'}}>User Name</h1>
+                <h1 style={{textAlign:'center', fontSize : '7em'}}>User Name</h1>
             </div>
-            <Row>
-                <h1 style={{marginLeft : '680px'}}>Applicaton</h1>
-            </Row>
-            <Row>
-                <p style={{fontSize : '18px', marginLeft : '680px', marginTop : '28px'}}>Add Resume</p>
-            </Row>
+            <h1 style={{textAlign:'center',marginTop:'10px'}}>Application</h1>
+            <p style={{fontSize : '18px', textAlign:'center', marginTop : '28px'}}>Add Resume</p>
         </div>
       )
     }

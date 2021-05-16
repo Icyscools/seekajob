@@ -4,7 +4,7 @@ import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 import Button from '@material-ui/core/Button'
 const txt1 = {
   fontSize : '2em',
-  marginLeft : '2%',
+  marginLeft : '5%',
   marginTop : '2%'
 }
 

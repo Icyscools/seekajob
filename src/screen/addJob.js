@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button'
 const txth1 = {
   position:'absolute',
   fontSize : '3em',
-  marginLeft : '2%',
+  marginLeft : '5%',
   top:'2.5em'
 }
 
