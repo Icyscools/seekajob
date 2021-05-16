@@ -1,7 +1,8 @@
 import React from 'react'
-import { Navbar,Nav, Row , Col , Container,Form,FormControl } from 'react-bootstrap';
+import { Navbar,Nav, Row , Col , Container, Form, FormControl } from 'react-bootstrap';
 import Button from '@material-ui/core/Button';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
+import Carousel from 'react-grid-carousel'
 
 const texth1 = {
   fontSize : '80px',
@@ -73,24 +74,59 @@ class Home extends React.Component {
               autoFocus
             />
             </div>
-            <div style={{paddingTop : '100px'}}>
-              {/* <Grid container spacing={3}>
-                <Grid item xs={3}>
-                  <Paper className={classes.paper}>xs=3</Paper>
-                </Grid>
-                <Grid item xs={3}>
-                  <Paper className={classes.paper}>xs=3</Paper>
-                </Grid>
-                <Grid item xs={3}>
-                  <Paper className={classes.paper}>xs=3</Paper>
-                </Grid>
-                <Grid item xs={3}>
-                  <Paper className={classes.paper}>xs=3</Paper>
-                </Grid>
-              </Grid> */}
-              <Container>
-              //todo
-              </Container>
+            <div style={{position:'relative',width:'95%',height:'auto',margin: '50px auto 0'}}>
+            <h3 style={{marginLeft:'3%'}}>Job</h3>
+              <Carousel cols={5} rows={1} gap={50} loop>
+                <Carousel.Item>
+                  <img width="100%" src="/si1.jpg" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img width="100%" src="/si2.jpg" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img width="100%" src="/si3.jpg" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img width="100%" src="/si4.jpg" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img width="100%" src="/si2.jpg" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img width="100%" src="/si2.jpg" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img width="100%" src="/si2.jpg" />
+                </Carousel.Item>
+              </Carousel>
+              
+            </div>
+            <div style={{position:'relative',width:'95%',height:'auto',margin: 'auto'}}>
+            <h3 style={{marginLeft:'3%'}}>Application</h3>
+              <Carousel cols={5} rows={1} gap={50} loop>
+                <Carousel.Item>
+                  <img width="100%" src="/si1.jpg" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img width="100%" src="/si2.jpg" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img width="100%" src="/si3.jpg" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img width="100%" src="/si4.jpg" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img width="100%" src="/si2.jpg" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img width="100%" src="/si2.jpg" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img width="100%" src="/si2.jpg" />
+                </Carousel.Item>
+              </Carousel>
+              
             </div>
           </div>
         </div>
