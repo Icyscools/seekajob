@@ -77,8 +77,14 @@ class Home extends React.Component {
             <div style={{position:'relative',width:'95%',height:'auto',margin: '50px auto 0'}}>
             <h3 style={{marginLeft:'3%'}}>Job</h3>
               <Carousel cols={5} rows={1} gap={50} loop>
-                <Carousel.Item>
+              <Carousel.Item>
                   <img width="100%" src="/si1.jpg" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img width="100%" src="/si4.jpg" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img width="100%" src="/w3.jpg" />
                 </Carousel.Item>
                 <Carousel.Item>
                   <img width="100%" src="/si2.jpg" />
@@ -90,10 +96,10 @@ class Home extends React.Component {
                   <img width="100%" src="/si4.jpg" />
                 </Carousel.Item>
                 <Carousel.Item>
-                  <img width="100%" src="/si2.jpg" />
+                  <img width="100%" src="/si1.jpg" />
                 </Carousel.Item>
                 <Carousel.Item>
-                  <img width="100%" src="/si2.jpg" />
+                  <img width="100%" src="/w3.jpg" />
                 </Carousel.Item>
                 <Carousel.Item>
                   <img width="100%" src="/si2.jpg" />
@@ -103,9 +109,16 @@ class Home extends React.Component {
             </div>
             <div style={{position:'relative',width:'95%',height:'auto',margin: 'auto'}}>
             <h3 style={{marginLeft:'3%'}}>Application</h3>
+              
               <Carousel cols={5} rows={1} gap={50} loop>
                 <Carousel.Item>
                   <img width="100%" src="/si1.jpg" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img width="100%" src="/si4.jpg" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img width="100%" src="/w3.jpg" />
                 </Carousel.Item>
                 <Carousel.Item>
                   <img width="100%" src="/si2.jpg" />
@@ -117,10 +130,10 @@ class Home extends React.Component {
                   <img width="100%" src="/si4.jpg" />
                 </Carousel.Item>
                 <Carousel.Item>
-                  <img width="100%" src="/si2.jpg" />
+                  <img width="100%" src="/si1.jpg" />
                 </Carousel.Item>
                 <Carousel.Item>
-                  <img width="100%" src="/si2.jpg" />
+                  <img width="100%" src="/w3.jpg" />
                 </Carousel.Item>
                 <Carousel.Item>
                   <img width="100%" src="/si2.jpg" />
