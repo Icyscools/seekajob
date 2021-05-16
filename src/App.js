@@ -7,9 +7,7 @@ import AddJob from './screen/addJob';
 import CreateUser from './screen/createUser';
 import AddApplication from './screen/addApplication';
 import AppList from './screen/applicationList';
-
-
-
+import JobDetail from './screen/jobDetail';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import Login from './screen/login'
 // import CreateUser from './screen/createUser'
