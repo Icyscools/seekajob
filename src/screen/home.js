@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navbar,Nav, Row , Col , Container,Form,FormControl } from 'react-bootstrap';
-import Button from '@material-ui/core/Button'
-import { ReactSearchAutocomplete } from 'react-search-autocomplete'
+import Button from '@material-ui/core/Button';
+import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 
 const texth1 = {
   fontSize : '80px',
@@ -30,7 +30,21 @@ const inputsearch = {
 //   width : '75px'
 // }
 
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     flexGrow: 1,
+//   },
+//   paper: {
+//     padding: theme.spacing(2),
+//     textAlign: 'center',
+//     color: theme.palette.text.secondary,
+//   },
+// }));
+
+// const classes = useStyles();
+
 class Home extends React.Component {
+
     render() {
       return (
         <div>
@@ -59,7 +73,25 @@ class Home extends React.Component {
               autoFocus
             />
             </div>
-            
+            <div style={{paddingTop : '100px'}}>
+              {/* <Grid container spacing={3}>
+                <Grid item xs={3}>
+                  <Paper className={classes.paper}>xs=3</Paper>
+                </Grid>
+                <Grid item xs={3}>
+                  <Paper className={classes.paper}>xs=3</Paper>
+                </Grid>
+                <Grid item xs={3}>
+                  <Paper className={classes.paper}>xs=3</Paper>
+                </Grid>
+                <Grid item xs={3}>
+                  <Paper className={classes.paper}>xs=3</Paper>
+                </Grid>
+              </Grid> */}
+              <Container>
+              //todo
+              </Container>
+            </div>
           </div>
         </div>
       );
