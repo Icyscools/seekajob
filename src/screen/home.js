@@ -1,56 +1,65 @@
 import React from 'react'
-import { ReactSearchAutocomplete } from 'react-search-autocomplete';
-import { Navbar,Nav, Row , Col , Container, Form, Button } from 'react-bootstrap';
+import { Navbar,Nav, Row , Col , Container,Form,FormControl } from 'react-bootstrap';
+import Button from '@material-ui/core/Button'
+import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 
 const texth1 = {
   fontSize : '80px',
-  marginTop : '2px',
-  marginLeft : '100px'
+  color: 'white',
 }
-
-const searchstyle = {
-  position: 'absolute' , 
-  width: '400px' , 
-  marginLeft:'550px' , 
-  marginTop: '2%'
+const texth2 = {
+  fontSize : '80px',
 }
-
-const buttonlogin = {
+const span = {
+  fontSize : '80px',
+  textAlign : 'center',
+  padding: 20,
+  margin: 'auto'
+}
+const inputsearch = {
   fontSize : '20px',
-  marginLeft : '1450px',
-  borderRadius : 15,
-  borderWidth : 1,
-  backgroundColor : 'lightBlue',
-  width : '75px'
 }
+
+// const buttonlogin = {
+//   position: 'relative',
+//   fontSize : '20px',
+//   right : '80px',
+//   borderRadius : 15,
+//   borderWidth : 1,
+//   backgroundColor : 'lightBlue',
+//   width : '75px'
+// }
 
 class Home extends React.Component {
     render() {
       return (
         <div>
-          <Navbar>
+          <Navbar bg="light" variant="light">
+            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+            <Nav className="mr-auto">
+            </Nav>
             <Form inline>
-              <Button style={{marginLeft : '1440px'}} type="submit">Login</Button>
+              <Button variant="outline-info">Login</Button>
             </Form>
           </Navbar>
+        {/* <div><button style={buttonlogin}> login </button> */}
           <div style={{
+            position:'relative',
             backgroundImage: "url(/w3.jpg)",
-            backgroundSize : 'cover',
-            height:'240px',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            width: '100%',
+            height: '250px',
             }}>
-            <h1 style={texth1}>Seekajob</h1>
-            <div style={searchstyle}>
-                <ReactSearchAutocomplete
-                    style={{display: 'inline'}}
-                    placeholder="search"
-                    // items={items}
-                    // onSearch={handleOnSearch}
-                    // onHover={handleOnHover}
-                    // onSelect={handleOnSelect}
-                    // onFocus={handleOnFocus}
-                    autoFocus
-                />
+            <div style={span}><span style={texth1}>Seeka</span><span style={texth2}>job</span></div>
+            <div style={{ width: 400, margin: 'auto'}}>
+            <ReactSearchAutocomplete
+              styling={{width:'40%'}}
+              placeholder="Search"
+              autoFocus
+            />
             </div>
+            
           </div>
         </div>
       );
