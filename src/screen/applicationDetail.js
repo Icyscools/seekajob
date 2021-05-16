@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button'
 const txt1 = {
   fontSize : '2em',
   marginLeft : '5%',
-  marginTop : '2%'
+  marginTop : '2%',
 }
 
 const buttonlogin = {
@@ -19,7 +19,7 @@ const buttonlogin = {
 
 const col = {
     fontSize : '18px',
-    marginTop: '20px'
+    marginTop: '20px',
 }
   
 class AppDetail extends React.Component {

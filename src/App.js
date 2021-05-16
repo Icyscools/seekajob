@@ -15,7 +15,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     
-    <div className="App">
+    <div style={{fontFamily: 'Oxygen, sans-serif'}} className="App">
       <Home />
     {/* //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
