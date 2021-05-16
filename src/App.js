@@ -11,6 +11,7 @@ import JobDetail from './screen/jobDetail';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import Login from './screen/login'
 // import CreateUser from './screen/createUser'
+import AuthCode from './screen/comfirmAuthCode'
 
 function App() {
   return (
