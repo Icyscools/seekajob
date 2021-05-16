@@ -19,7 +19,6 @@ export default class Interview extends React.Component {
   }
   
   render() {
-    const [value, onChange] = useState('10:00');
     
     const { selectedDay } = this.state;
     return (
@@ -41,7 +40,7 @@ export default class Interview extends React.Component {
                 {selectedDay && <p>Day: {selectedDay.toLocaleDateString()}</p>}
                 {!selectedDay && <p>Choose a day</p>}
                 <DayPickerInput onDayChange={this.handleDayChange} /><br />
-                <TimePicker onChange={onChange} value={value}/><br />
+                <TimePicker /><br />
                 <Button variant="primary" style={{marginTop : '15px'}}>send</Button>
             </div>
         </div>
@@ -49,6 +48,7 @@ export default class Interview extends React.Component {
     );
   }
 }
+
 
 // class Interview extends React.Component {
 //     render() {

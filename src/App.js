@@ -12,12 +12,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import Login from './screen/login'
 // import CreateUser from './screen/createUser'
 import AuthCode from './screen/comfirmAuthCode'
+import Interview from './screen/interview'
+
 
 function App() {
   return (
     
     <div style={{fontFamily: 'Oxygen, sans-serif'}} className="App">
-      <Home />
+      <Interview />
     {/* //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
     //     <p>
