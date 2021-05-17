@@ -6,7 +6,7 @@ import { TimePicker, Button } from 'antd';
 export default class TimePickerAddonDemo extends React.Component {
   state = { open: false };
 
-  handleOpenChange = open => {
+  handleOpenChange = (open) => {
     this.setState({ open });
   };
 
@@ -27,4 +27,4 @@ export default class TimePickerAddonDemo extends React.Component {
   }
 }
 
-// ReactDOM.render(<TimePickerAddonDemo />, document.getElementById('container')); 
+// ReactDOM.render(<TimePickerAddonDemo />, document.getElementById('container'));
