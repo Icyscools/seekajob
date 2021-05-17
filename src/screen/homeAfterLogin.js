@@ -4,6 +4,8 @@ import Button from '@material-ui/core/Button';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 import Carousel from 'react-grid-carousel'
 import Login from './login'
+import AppList from './applicationList';
+import {LinkContainer} from 'react-router-bootstrap'
 
 const texth1 = {
   fontSize : '80px',
@@ -25,10 +27,14 @@ class HomeAfterLogin extends React.Component {
       return (
         <div>
           <Navbar bg="light" variant="light">
-                <Navbar.Brand href="#home">Home</Navbar.Brand>
+                <Navbar.Brand href="/">Home</Navbar.Brand>
                 <Nav className="mr-auto">
-                <Nav.Link href="#job">Jobs</Nav.Link>
-                <Nav.Link href="#application">Application</Nav.Link>
+                <LinkContainer to="/JobList">
+                  <Nav.Link>Jobs</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/AppList">
+                  <Nav.Link>Application</Nav.Link>
+                </LinkContainer>
                 </Nav>
             </Navbar>
         {/* <div><button style={buttonlogin}> login </button> */}
