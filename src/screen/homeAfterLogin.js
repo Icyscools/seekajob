@@ -19,19 +19,18 @@ const span = {
   margin: 'auto'
 }
 
-class Home extends React.Component {
+class HomeAfterLogin extends React.Component {
 
     render() {
       return (
         <div>
           <Navbar bg="light" variant="light">
-            <Navbar.Brand href="#home">Home</Navbar.Brand>
-            <Nav className="mr-auto">
-            </Nav>
-            <Form inline>
-              <Button variant="outline-info" onClick={<Login />}>Login</Button>
-            </Form>
-          </Navbar>
+                <Navbar.Brand href="#home">Home</Navbar.Brand>
+                <Nav className="mr-auto">
+                <Nav.Link href="#job">Jobs</Nav.Link>
+                <Nav.Link href="#application">Application</Nav.Link>
+                </Nav>
+            </Navbar>
         {/* <div><button style={buttonlogin}> login </button> */}
           <div style={{
             position:'relative',
@@ -121,4 +120,4 @@ class Home extends React.Component {
       );
     }
   }
-  export default Home
+  export default HomeAfterLogin

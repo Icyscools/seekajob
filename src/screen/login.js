@@ -1,7 +1,12 @@
 import React from 'react'
 import reactDom from 'react-dom';
-// import './style/home.css';
-// import background from './picture/si2.jpg'
+import Button from 'react-bootstrap/Button'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const textinputemail = {
   fontSize : '20px',
@@ -15,33 +20,14 @@ const textinputpassword = {
   marginRight : '650px',
 }
 
-const buttonlogin = {
-  fontSize : '25px',
-  backgroundColor: "white",
-  padding: "5px",
-  marginRight : '650px',
-  marginTop : '100px',
-  paddingTop : 14,
-  paddingBottom : 14,
-  borderRadius : 15,
-  borderWidth : 1,
-  borderColor: 'black',
-  width : '250px'
-  
-}
-
-const textt = {
-  fontSize : '20px',
-  marginRight : '650px',
-}
-
 class Login extends React.Component {
     render() {
       return (
         <div style={{
           backgroundImage: "url(/si2.jpg)",
           backgroundSize : 'cover',
-          height : '720px'
+          height : '720px',
+          textAlign : 'center'
 
           }}>
           <form id='email' name='email'>
@@ -50,8 +36,11 @@ class Login extends React.Component {
           <form id='password' name='password'>
           <input style={textinputpassword} type='password' id='password' name='password' placeholder='password'></input>
           </form>
-          <button style={buttonlogin} name='login'>Log in</button><br /><br />
-          <text style={textt}>You don't have an account ?</text><br />
+          <Button variant="light" size="lg" style={{marginTop : '50px', marginRight : '650px'}}>
+            {/* <Link to='/'>Log in</Link> */}
+          </Button><br />
+          <text style={{fontSize : '20px',}}>You don't have an account ?</text>{' '}
+          <text style={{fontSize : '20px', marginRight : '620px'}}>Sign up</text>
         </div>
       );
     }

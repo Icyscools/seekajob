@@ -9,18 +9,18 @@ import AddApplication from './screen/addApplication';
 import AppList from './screen/applicationList';
 import JobDetail from './screen/jobDetail';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import Login from './screen/login'
-// import CreateUser from './screen/createUser'
+import Login from './screen/login'
 import AuthCode from './screen/comfirmAuthCode'
 import Interview from './screen/interview'
 import TimePickerAddonDemo from './screen/timepicker'
+import HomeAfterLogin from './screen/homeAfterLogin'
 
 
 function App() {
   return (
     
     <div style={{fontFamily: 'Oxygen, sans-serif'}} className="App">
-      <Home />
+      <HomeAfterLogin />
     {/* //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
     //     <p>
