@@ -1,15 +1,20 @@
 import React from 'react'
 import { Navbar,Nav, Row , Col , Container, Form } from 'react-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap'
 
 class AddApplication extends React.Component {
     render() {
       return (
         <div>
             <Navbar bg="light" variant="light">
-                <Navbar.Brand href="#home">Home</Navbar.Brand>
+                <Navbar.Brand href="/">Home</Navbar.Brand>
                 <Nav className="mr-auto">
-                <Nav.Link href="#job">Jobs</Nav.Link>
-                <Nav.Link href="#application">Application</Nav.Link>
+                <LinkContainer to="/JobList">
+                  <Nav.Link>Jobs</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/AppList">
+                  <Nav.Link>Application</Nav.Link>
+                </LinkContainer>
                 </Nav>
             </Navbar>
             <div style={{

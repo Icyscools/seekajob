@@ -1,7 +1,8 @@
 import React from 'react'
 import { Navbar,Nav,Card,Button,CardDeck } from 'react-bootstrap';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
-// import Button from '@material-ui/core/Button'
+import {LinkContainer} from 'react-router-bootstrap'
+
 const txt1 = {
   fontSize : '2em',
   marginLeft : '5%',
@@ -46,11 +47,14 @@ class AppList extends React.Component {
         <div>
             {/* <div style={{position: 'absolute', height: '10px'}}><button style={buttonlogin}> login </button></div> */}
             <Navbar bg="light" variant="light">
-                <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                <Navbar.Brand href="/">Home</Navbar.Brand>
                 <Nav className="mr-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#features">Features</Nav.Link>
-                <Nav.Link href="#pricing">Pricing</Nav.Link>
+                <LinkContainer to="/JobList">
+                  <Nav.Link>Jobs</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/AppList">
+                  <Nav.Link>Application</Nav.Link>
+                </LinkContainer>
                 </Nav>
             </Navbar>
             <h2 style={txt1}>Applications</h2>
