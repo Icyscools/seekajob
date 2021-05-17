@@ -16,7 +16,16 @@ const buttonlogin = {
   backgroundColor : 'lightBlue',
   width : '75px'
 }
-
+const container = {
+  position: 'relative', 
+  top:'20px', 
+  marginLeft:'5%', 
+  width:'90%',
+  border: '4px solid #F7F7F7',
+  borderRadius: '20px',
+  backgroundColor: '#FCFCFC',
+  padding:'30px'
+}
 class JobList extends React.Component {
     render() {
       return (
@@ -30,25 +39,30 @@ class JobList extends React.Component {
                 <Nav.Link href="#pricing">Pricing</Nav.Link>
                 </Nav>
             </Navbar>
-            <h2 style={txt1}>Jobs</h2>
-            <div style={{position: 'absolute' , width: '400px' , marginLeft:'2%' , marginTop: '2%'}}>
-                <ReactSearchAutocomplete
-                    style={{display: 'inline'}}
-                    placeholder="Find your jobs"
-                    // items={items}
-                    // onSearch={handleOnSearch}
-                    // onHover={handleOnHover}
-                    // onSelect={handleOnSelect}
-                    // onFocus={handleOnFocus}
-                    autoFocus
-                />
-            </div>
-            <div style={{position: 'absolute' , right:'20px' , marginTop: '2%'}}>
+            <div style={{position:'relative', width:'100%', height:'150px'}}>
+              <h2 style={txt1}>Jobs</h2>
+              <div style={{position: 'absolute' , width: '400px' , marginLeft:'5%' , marginTop: '2%'}}>
+                  <ReactSearchAutocomplete
+                      style={{display: 'inline'}}
+                      placeholder="Find your jobs"
+                      // items={items}
+                      // onSearch={handleOnSearch}
+                      // onHover={handleOnHover}
+                      // onSelect={handleOnSelect}
+                      // onFocus={handleOnFocus}
+                      autoFocus
+                  />
+              </div>
+              <div style={{position: 'absolute' , right:'5%' , marginTop: '2%'}}>
                 <Button variant="outlined"style={{display: 'inline'}}>Create a new job</Button>
+              </div>
             </div>
-            {/*  */}
-            {/* ไว้ใส่ job */}
-            {/*  */}
+            <div style={container}>
+              <h4>Front-end Developer</h4>
+              <h5>Salary: 15000 THB</h5>
+              <p style={{textAlign:'right',position: 'absolute',top: '30px', right: '30px'}}>Approved Status: Waiting</p>
+              <p style={{textAlign:'right',position: 'absolute',bottom: '30px', right: '30px'}}>Company Name</p>
+            </div>
         </div>
       )
     }

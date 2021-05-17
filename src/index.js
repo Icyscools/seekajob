@@ -15,7 +15,6 @@ ReactDOM.render(
         <Route exact path="/" component={App} />
         <Route path="/AppList" component={AppList} />
         <Route path="/JobList" component={JobList} />
-        
       </Switch>
     </Router>
     
