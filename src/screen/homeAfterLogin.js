@@ -4,7 +4,6 @@ import Button from '@material-ui/core/Button';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 import Carousel from 'react-grid-carousel'
 import Login from './login'
-import AppList from './applicationList';
 import {LinkContainer} from 'react-router-bootstrap'
 
 const texth1 = {

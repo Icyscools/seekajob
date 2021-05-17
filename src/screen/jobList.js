@@ -58,9 +58,9 @@ class JobList extends React.Component {
                       autoFocus
                   />
               </div>
-              <div style={{position: 'absolute' , right:'5%' , marginTop: '2%'}}>
+              <LinkContainer to="/AddJob" style={{position: 'absolute' , right:'5%' , marginTop: '2%'}}>
                 <Button variant="outlined"style={{display: 'inline'}}>Create a new job</Button>
-              </div>
+              </LinkContainer>
             </div>
             <div style={container}>
               <h4>Front-end Developer</h4>

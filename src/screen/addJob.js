@@ -83,7 +83,8 @@ class AddJob extends React.Component {
                     </Row>
                     <Row>
                         <Col style={col}></Col>
-                        <Col style={col}><Button variant="outlined"style={{position:'absolute',right:'10px'}}>Create job</Button></Col>
+                        <Col style={col}>
+                        <LinkContainer to="/JobList" style={{position:'absolute',right:'10px'}}><Button variant="outlined">Create job</Button></LinkContainer></Col>
                     </Row>
                 </Container>
             
