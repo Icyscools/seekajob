@@ -2,6 +2,7 @@ import React from 'react'
 import { Navbar,Nav } from 'react-bootstrap';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 import Button from '@material-ui/core/Button'
+import {LinkContainer} from 'react-router-bootstrap'
 
 const txt1 = {
   marginLeft : '5%',
@@ -23,11 +24,14 @@ class JobDetail extends React.Component {
         <div>
             {/* <div style={{position: 'absolute', height: '10px'}}><button style={buttonlogin}> login </button></div> */}
             <Navbar bg="light" variant="light">
-                <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                <Navbar.Brand href="/">Home</Navbar.Brand>
                 <Nav className="mr-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#features">Features</Nav.Link>
-                <Nav.Link href="#pricing">Pricing</Nav.Link>
+                <LinkContainer to="/JobList">
+                  <Nav.Link>Jobs</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/AppList">
+                  <Nav.Link>Application</Nav.Link>
+                </LinkContainer>
                 </Nav>
             </Navbar>
             <div style={container}>
