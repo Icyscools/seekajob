@@ -13,13 +13,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import CreateUser from './screen/createUser'
 import AuthCode from './screen/comfirmAuthCode'
 import Interview from './screen/interview'
+import TimePickerAddonDemo from './screen/timepicker'
 
 
 function App() {
   return (
     
     <div style={{fontFamily: 'Oxygen, sans-serif'}} className="App">
-      <Interview />
+      <Home />
     {/* //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
     //     <p>

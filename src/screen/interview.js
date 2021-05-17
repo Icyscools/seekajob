@@ -3,6 +3,7 @@ import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
 import Button from 'react-bootstrap/Button'
 import TimePicker from 'react-time-picker';
+import TimePickerAddonDemo from './timepicker'
 
 
 export default class Interview extends React.Component {
@@ -40,7 +41,7 @@ export default class Interview extends React.Component {
                 {selectedDay && <p>Day: {selectedDay.toLocaleDateString()}</p>}
                 {!selectedDay && <p>Choose a day</p>}
                 <DayPickerInput onDayChange={this.handleDayChange} /><br />
-                <TimePicker /><br />
+                <label style={{marginTop : '15px'}}><TimePickerAddonDemo /></label><br />
                 <Button variant="primary" style={{marginTop : '15px'}}>send</Button>
             </div>
         </div>
