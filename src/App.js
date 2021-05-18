@@ -1,43 +1,48 @@
-import logo from './logo.svg';
 import './App.css';
-import Home from './screen/home';
-import JobList from './screen/jobList';
-import AppDetail from './screen/applicationDetail';
-import AddJob from './screen/addJob';
-import CreateUser from './screen/createUser';
-import AddApplication from './screen/addApplication';
-import AppList from './screen/applicationList';
-import JobDetail from './screen/jobDetail';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import Login from './screen/login'
-// import CreateUser from './screen/createUser'
-import AuthCode from './screen/comfirmAuthCode';
-import Interview from './screen/interview';
-import TimePickerAddonDemo from './screen/timepicker';
-import HomeAfterLogin from './screen/homeAfterLogin';
+import { useEffect } from 'react';
+import HomeScreen from './screen/HomeScreen';
+import JobListScreen from './screen/jobs/JobListScreen';
+import JobDetailScreen from './screen/jobs/JobDetailScreen';
+import JobCreateScreen from './screen/jobs/JobCreateScreen';
+import LoginScreen from './screen/auths/LoginScreen';
+import RegisterScreen from './screen/auths/RegisterScreen';
+import ConfirmAuthCodeScreen from './screen/auths/ConfirmAuthCodeScreen';
+import AppDetail from './screen/applicationDetail';
+import AppList from './screen/applicationList';
+import { useSelector, useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { loginWithTokenAction } from './store/actions/AuthAction';
 
 function App() {
-  return (
-    <div style={{ fontFamily: 'Oxygen, sans-serif' }} className="App">
-      <Router>
-        {/* <App /> */}
-        <Switch>
-          <Route exact path="/" component={Home} />
-          {/* <Route path="/AddApp" component={AddApp} /> */}
-          <Route path="/applications" component={AppList} />
-          <Route path="/application/:id" component={AppDetail} />
-          {/* <Route path="/ConfirmAuthen" component={ConfirmAuthen} /> */}
-          {/* <Route path="/CompanyForm" component={CompanyForm} /> */}
-          {/* <Route path="/CreateUser" component={CreateUser} /> */}
-          {/* <Route path="/Interview" component={Interview} /> */}
+  const dispatch = useDispatch();
+  const auth = useSelector((state) => state);
+  useEffect(async () => {
+    const updateLoginState = (token) => {
+      dispatch(loginWithTokenAction(token));
+    };
 
-          {/* <Route path="/login" component={Login} /> */}
+    await updateLoginState(localStorage.getItem('token'));
+
+    console.log(auth);
+  }, [dispatch]);
+
+  return (
+    <div style={{ fontFamily: 'Oxygen, sans-serif' }}>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={HomeScreen} />
+          {/* <Route path="/AddApp" component={AddApp} /> */}
+          <Route exact path="/applications" component={AppList} />
+          <Route path="/application/:id" component={AppDetail} />
+          {/* <Route path="/Interview" component={Interview} /> */}
+          <Route path="/login" component={LoginScreen} />
+          <Route path="/register" component={RegisterScreen} />
+          <Route path="/confirm" component={ConfirmAuthCodeScreen} />
           {/* <Route path="/timepick" component={TimePick} /> */}
-          {/* <Route path="/worker/create" component={WorkerForm} /> */}
-          <Route path="/jobs" component={JobList} />
-          <Route path="/job/create" component={AddJob} />
-          <Route path="/jobs/:id" component={JobDetail} />
+          <Route exact path="/jobs" component={JobListScreen} />
+          <Route exact path="/jobs/create" component={JobCreateScreen} />
+          <Route path="/job/:id" component={JobDetailScreen} />
         </Switch>
       </Router>
     </div>
