@@ -10,7 +10,7 @@ const container = {
 
 const JobCard = ({ job }) => {
   return (
-    <LinkContainer to={`/job/${job.id}`}>
+    <LinkContainer to={`/job/${job.id}`} style={{ cursor: 'pointer' }}>
       <div style={container}>
         <h4>{job?.title ?? '-'}</h4>
         <h5>Salary: {job?.salary ?? '-'} THB</h5>

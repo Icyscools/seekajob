@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import Button from '@material-ui/core/Button';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useSelector } from 'react-redux';
@@ -32,7 +32,15 @@ const NavTab = () => {
       )}
 
       {auth?.user?.username ? (
-        <small>{auth?.user?.username}</small>
+        <NavDropdown title={auth?.user?.username} id="navbarScrollingDropdown" alignRight={true}>
+          <LinkContainer to="/profile">
+            <NavDropdown.Item href="#action3">Edit profile</NavDropdown.Item>
+          </LinkContainer>
+          <NavDropdown.Divider />
+          <LinkContainer to="/logout">
+            <NavDropdown.Item href="#action4">Logout</NavDropdown.Item>
+          </LinkContainer>
+        </NavDropdown>
       ) : (
         <LinkContainer to="/login">
           <Button variant="outline-info">Login</Button>
