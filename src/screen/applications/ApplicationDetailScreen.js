@@ -10,6 +10,12 @@ const txt1 = {
   fontSize: '2em',
 };
 
+const wrappedSquareImageStyle = {
+  paddingBottom: '100%',
+  overflow: 'hidden',
+  position: 'relative',
+};
+
 const ApplicationDetailScreen = () => {
   const { id } = useParams();
   const [application, setApplication] = useState();
@@ -46,12 +52,18 @@ const ApplicationDetailScreen = () => {
         </h2>
         <Row>
           <Col md={3}>
-            <Image
-              src="/user-placeholder.png"
-              className="w-100 h-auto mb-4"
-              style={{ maxWidth: 180, maxHeight: 180 }}
-              roundedCircle
-            />
+            <div style={wrappedSquareImageStyle}>
+              <Image
+                src={
+                  !!application?.worker?.user?.profile_img
+                    ? application.worker.user.profile_img
+                    : '/user-placeholder.png'
+                }
+                className="img img-responsive w-100 h-100"
+                style={{ maxWidth: 180, maxHeight: 180, position: 'absolute' }}
+                roundedCircle
+              />
+            </div>
           </Col>
           <Col>
             <Row>

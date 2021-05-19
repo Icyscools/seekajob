@@ -36,12 +36,15 @@ const NavTab = () => {
 
       {auth?.user?.username ? (
         <NavDropdown title={auth?.user?.username} id="navbarScrollingDropdown" alignRight={true}>
-          <LinkContainer to="/profile">
-            <NavDropdown.Item href="#action3">Edit profile</NavDropdown.Item>
+          <LinkContainer to="/profile" activeStyle={{}}>
+            <NavDropdown.Item>View my profile</NavDropdown.Item>
+          </LinkContainer>
+          <LinkContainer to="/profile/edit">
+            <NavDropdown.Item>Edit my profile</NavDropdown.Item>
           </LinkContainer>
           <NavDropdown.Divider />
           <LinkContainer to="/logout">
-            <NavDropdown.Item href="#action4">Logout</NavDropdown.Item>
+            <NavDropdown.Item>Logout</NavDropdown.Item>
           </LinkContainer>
         </NavDropdown>
       ) : (
