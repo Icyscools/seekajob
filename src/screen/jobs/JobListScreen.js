@@ -18,28 +18,31 @@ const JobListScreen = () => {
   const [auth, setAuth] = useState();
   const authSelector = useSelector((state) => state.auth);
 
-  useEffect(async () => {
-    const auth = await authSelector;
-    setAuth(auth);
+  useEffect(() => {
+    const fetchAuthUser = async () => {
+      const auth = await authSelector;
+      setAuth(auth);
 
-    if (auth?.user?.role === 'company') {
-      getJobsByCurrentCompany().then((res) => {
-        setJobs(res.data);
-      });
-    } else {
-      getJobs().then((res) => {
-        setJobs(res.data);
-      });
-    }
-  }, [auth]);
+      if (auth?.user?.role === 'company') {
+        getJobsByCurrentCompany().then((res) => {
+          setJobs(res.data);
+        });
+      } else {
+        getJobs().then((res) => {
+          setJobs(res.data);
+        });
+      }
+    };
+    fetchAuthUser();
+  }, [authSelector]);
 
   const handleOnSearch = useCallback((value) => {
     setFilterName(value);
-  });
+  }, []);
 
   const handleOnSearchClear = useCallback(() => {
     setFilterName('');
-  });
+  }, []);
 
   return (
     <LayoutWithNavTab>
@@ -70,15 +73,13 @@ const JobListScreen = () => {
           )}
         </Row>
 
-        <Row className="my-3">
+        <Container className="my-3">
           {jobs
             .filter((job) => job.title.includes(filterName))
             .map((job) => (
-              <Col col="12" md="6" lg="4">
-                <JobCard job={job} />
-              </Col>
+              <JobCard job={job} />
             ))}
-        </Row>
+        </Container>
       </Container>
     </LayoutWithNavTab>
   );

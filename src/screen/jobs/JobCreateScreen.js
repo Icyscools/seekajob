@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Row, Col, Container, Form } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
@@ -14,15 +13,18 @@ const JobCreateScreen = () => {
   const [auth, setAuth] = useState();
   const authSelector = useSelector((state) => state.auth);
 
-  useEffect(async () => {
-    const auth = await authSelector;
-    setAuth(auth);
+  useEffect(() => {
+    const fetchAuthUser = async () => {
+      const auth = await authSelector;
+      setAuth(auth);
 
-    if (auth?.user?.role !== 'company') {
-      history.replace('/jobs');
-    }
-    handleChangeValue('companyId', auth?.user?.company?.id);
-  }, [auth]);
+      if (auth?.user?.role !== 'company') {
+        history.replace('/jobs');
+      }
+      handleChangeValue('companyId', auth?.user?.company?.id);
+    };
+    fetchAuthUser();
+  }, [authSelector]);
 
   const handleCreateJobForm = (evt) => {
     evt.preventDefault();
@@ -46,7 +48,7 @@ const JobCreateScreen = () => {
       ...job,
       [key]: value,
     });
-  });
+  }, []);
 
   return (
     <LayoutWithNavTab>

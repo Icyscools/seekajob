@@ -1,17 +1,23 @@
 import { LinkContainer } from 'react-router-bootstrap';
 
-const container = {
-  width: '90%',
-  border: '4px solid #F7F7F7',
+const cardStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  width: '100%',
+  border: '4px solid #F4F4F4',
   borderRadius: '20px',
-  backgroundColor: '#FCFCFC',
-  padding: '30px',
+  backgroundColor: '#FEFEFE',
+  padding: 24,
 };
 
 const JobCard = ({ job }) => {
   return (
-    <LinkContainer to={`/job/${job.id}`} style={{ cursor: 'pointer' }}>
-      <div style={container}>
+    <LinkContainer
+      to={`/job/${job.id}`}
+      style={{ cursor: 'pointer', ...cardStyle }}
+      className="my-3"
+    >
+      <div style={cardStyle}>
         <h4>{job?.title ?? '-'}</h4>
         <h5>Salary: {job?.salary ?? '-'} THB</h5>
         {/* <p style={{ textAlign: 'right', position: 'absolute', top: '30px', right: '30px' }}>

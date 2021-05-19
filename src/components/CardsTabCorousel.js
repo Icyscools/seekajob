@@ -1,4 +1,5 @@
 import Carousel from 'react-grid-carousel';
+import { Link } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 
 const cardStyle = {
@@ -6,21 +7,23 @@ const cardStyle = {
   flexDirection: 'column',
   width: '100%',
   minHeight: 150,
-  border: '4px solid #F7F7F7',
+  border: '4px solid #F4F4F4',
   borderRadius: '20px',
-  backgroundColor: '#FCFCFC',
+  backgroundColor: '#FEFEFE',
   padding: '30px',
 };
 
 const CardsTabCorousel = ({ title, items }) => {
-  const renderCardItem = ({ title, description, endline }) => {
+  const renderCardItem = ({ title, description, endline, id, goto }) => {
     return (
-      <Carousel.Item>
-        <div style={cardStyle}>
-          <h5 style={{ marginBottom: 10 }}>{title}</h5>
-          <small className="mb-3">{description}</small>
-          <span className="mt-auto ml-auto">{endline ?? 'a'}</span>
-        </div>
+      <Carousel.Item key={id}>
+        <Link to={`${goto}`}>
+          <div style={cardStyle}>
+            <h5 style={{ marginBottom: 10 }}>{title}</h5>
+            <small className="mb-3">{description}</small>
+            <span className="mt-auto ml-auto">{endline ?? 'a'}</span>
+          </div>
+        </Link>
       </Carousel.Item>
     );
   };

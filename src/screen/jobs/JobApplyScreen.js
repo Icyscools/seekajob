@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Row, Col, Container, Form, Button } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+import { Container, Form, Button } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import LayoutWithNavTab from '../../layouts/LayoutWithNavTab';
@@ -18,23 +17,26 @@ const JobApplyScreen = () => {
   const [auth, setAuth] = useState();
   const authSelector = useSelector((state) => state.auth);
 
-  useEffect(async () => {
-    const auth = await authSelector;
-    setAuth(auth);
+  useEffect(() => {
+    const fetchAuthUser = async () => {
+      const auth = await authSelector;
+      setAuth(auth);
 
-    if (auth?.user?.role !== 'worker') {
-      history.replace(`/job/${id}`);
-    }
-    handleChangeValue('workerId', auth?.user?.worker?.id);
-
-    getJobById(id).then((res) => {
-      if (res.data) {
-        setJobTitle(res.data.title ?? 'Untitled');
-      } else {
-        history.replace(`/jobs`);
+      if (auth?.user?.role !== 'worker') {
+        history.replace(`/job/${id}`);
       }
-    });
-  }, [auth]);
+      handleChangeValue('workerId', auth?.user?.worker?.id);
+
+      getJobById(id).then((res) => {
+        if (res.data) {
+          setJobTitle(res.data.title ?? 'Untitled');
+        } else {
+          history.replace(`/jobs`);
+        }
+      });
+    };
+    fetchAuthUser();
+  }, [authSelector]);
 
   const handleChangeValue = useCallback((key, value) => {
     setApplication({
@@ -103,7 +105,11 @@ const JobApplyScreen = () => {
           ) : (
             ''
           )}
-          <Button color="primary" type="submit" className="my-3">
+          <Button
+            variant={error ? 'outline-danger' : 'outline-primary'}
+            type="submit"
+            className="my-3"
+          >
             Apply job
           </Button>
         </Container>

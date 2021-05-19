@@ -15,21 +15,24 @@ const JobUpdateScreen = () => {
   const [auth, setAuth] = useState();
   const authSelector = useSelector((state) => state.auth);
 
-  useEffect(async () => {
-    const auth = await authSelector;
-    console.log(auth);
-    setAuth(auth);
+  useEffect(() => {
+    const fetchAuthUser = async () => {
+      const auth = await authSelector;
+      console.log(auth);
+      setAuth(auth);
 
-    handleChangeValue('companyId', auth?.user?.company?.id);
+      handleChangeValue('companyId', auth?.user?.company?.id);
 
-    getJobById(id).then((res) => {
-      if (auth?.user?.company?.id !== res.data?.company?.id) {
-        history.replace(`/job/${id}`);
-      }
-      setJob(res.data);
-      console.log(res.data);
-    });
-  }, [auth]);
+      getJobById(id).then((res) => {
+        if (auth?.user?.company?.id !== res.data?.company?.id) {
+          history.replace(`/job/${id}`);
+        }
+        setJob(res.data);
+        console.log(res.data);
+      });
+    };
+    fetchAuthUser();
+  }, [authSelector]);
 
   const handleUpdateJobForm = (evt) => {
     evt.preventDefault();
@@ -37,8 +40,8 @@ const JobUpdateScreen = () => {
     updateJob(job)
       .then((result) => {
         const { data, status } = result;
-        if (data && status === 201) {
-          history.replace('/job');
+        if (data && status === 200) {
+          history.replace(`/job/${id}`);
         }
       })
       .catch((err) => {

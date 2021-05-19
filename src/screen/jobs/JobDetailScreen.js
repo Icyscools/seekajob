@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from '@material-ui/core/Button';
+import LayoutWithNavTab from '../../layouts/LayoutWithNavTab';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import LayoutWithNavTab from '../../layouts/LayoutWithNavTab';
 import { getJobById } from '../../api/jobs';
 
 const JobDetailScreen = () => {
@@ -13,13 +13,16 @@ const JobDetailScreen = () => {
   const [auth, setAuth] = useState();
   const authSelector = useSelector((state) => state.auth);
 
-  useEffect(async () => {
-    const auth = await authSelector;
-    setAuth(auth);
-    getJobById(id).then((res) => {
-      setJob(res.data);
-    });
-  }, [auth]);
+  useEffect(() => {
+    const fetchAuthUser = async () => {
+      const auth = await authSelector;
+      setAuth(auth);
+      getJobById(id).then((res) => {
+        setJob(res.data);
+      });
+    };
+    fetchAuthUser();
+  }, [authSelector]);
 
   return (
     <LayoutWithNavTab>

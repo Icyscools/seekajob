@@ -10,23 +10,20 @@ import JobUpdateScreen from './screen/jobs/JobUpdateScreen';
 import LoginScreen from './screen/auths/LoginScreen';
 import RegisterScreen from './screen/auths/RegisterScreen';
 import ConfirmAuthCodeScreen from './screen/auths/ConfirmAuthCodeScreen';
-import AppDetail from './screen/applicationDetail';
+import ApplicationDetailScreen from './screen/applications/ApplicationDetailScreen';
 import ApplicationListScreen from './screen/applications/ApplicationListScreen';
-import { useSelector, useDispatch } from 'react-redux';
+import ApplicationAppointmentScreen from './screen/applications/ApplicationAppointmentScreen';
+import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { loginWithTokenAction } from './store/actions/AuthAction';
 
 function App() {
   const dispatch = useDispatch();
-  const auth = useSelector((state) => state);
-  useEffect(async () => {
+  useEffect(() => {
     const updateLoginState = (token) => {
       dispatch(loginWithTokenAction(token));
     };
-
-    await updateLoginState(localStorage.getItem('token'));
-
-    console.log(auth);
+    updateLoginState(localStorage.getItem('token'));
   }, [dispatch]);
 
   return (
@@ -35,8 +32,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomeScreen} />
           <Route exact path="/applications" component={ApplicationListScreen} />
-          <Route path="/application/:id" component={AppDetail} />
-          {/* <Route path="/Interview" component={Interview} /> */}
+          <Route path="/application/:id/appointment" component={ApplicationAppointmentScreen} />
+          <Route path="/application/:id" component={ApplicationDetailScreen} />
           <Route path="/login" component={LoginScreen} />
           <Route path="/register" component={RegisterScreen} />
           <Route path="/confirm" component={ConfirmAuthCodeScreen} />

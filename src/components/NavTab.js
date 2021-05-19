@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
-import Button from '@material-ui/core/Button';
+import { Navbar, Nav, NavDropdown, Button } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useSelector } from 'react-redux';
 
@@ -8,10 +7,14 @@ const NavTab = () => {
   const [auth, setAuth] = useState();
   const authSelector = useSelector((state) => state.auth);
 
-  useEffect(async () => {
-    const auth = await authSelector;
-    setAuth(auth);
-  }, [auth]);
+  useEffect(() => {
+    const fetchAuthUser = async () => {
+      const auth = await authSelector;
+      setAuth(auth);
+    };
+
+    fetchAuthUser();
+  }, [authSelector]);
 
   return (
     <Navbar bg="light" variant="light">
@@ -25,7 +28,7 @@ const NavTab = () => {
 
       {auth?.user?.role === 'worker' || auth?.user?.role === 'company' ? (
         <LinkContainer to="/applications">
-          <Nav.Link>Application</Nav.Link>
+          <Nav.Link>Applications</Nav.Link>
         </LinkContainer>
       ) : (
         <></>

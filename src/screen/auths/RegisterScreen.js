@@ -6,10 +6,6 @@ import WorkerForm from '../../components/auths/WorkerForm';
 import CompanyForm from '../../components/auths/CompanyForm';
 import { register } from '../../api/auth';
 
-const styleinput = {
-  fontSize: 16,
-};
-
 const stylebuttoncreate = {
   fontSize: 18,
   backgroundColor: 'white',
@@ -37,12 +33,15 @@ const RegisterScreen = () => {
     experience: '',
   });
 
-  const handleChangeValue = useCallback((key, value) => {
-    setUser({
-      ...user,
-      [key]: value,
-    });
-  });
+  const handleChangeValue = useCallback(
+    (key, value) => {
+      setUser({
+        ...user,
+        [key]: value,
+      });
+    },
+    [user],
+  );
 
   const changeRole = (role) => {
     if (role === 'worker') {
@@ -57,7 +56,7 @@ const RegisterScreen = () => {
   const handleRegister = (evt) => {
     evt.preventDefault();
     if (!user.role) setError('Please select role');
-    else if (user.password != user.confirm_password) setError('Password not matched');
+    else if (user.password !== user.confirm_password) setError('Password not matched');
     else {
       register(user)
         .then((result) => {

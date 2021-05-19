@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Row, Col, Container } from 'react-bootstrap';
-import { ReactSearchAutocomplete } from 'react-search-autocomplete';
+import { Container } from 'react-bootstrap';
 import CardsTabCorousel from '../components/CardsTabCorousel';
 import LayoutWithNavTab from '../layouts/LayoutWithNavTab';
 import { getJobs } from '../api/jobs';
@@ -43,19 +42,17 @@ const HomeScreen = () => {
           <span style={texth1}>Seeka</span>
           <span style={texth2}>job</span>
         </div>
-        {/* <div style={{ width: '50%', margin: 'auto' }}>
-          <ReactSearchAutocomplete styling={{ width: '40%' }} placeholder="Search" autoFocus />
-        </div> */}
       </div>
       <Container className="my-3">
         <CardsTabCorousel
           title={'Jobs'}
           items={jobs?.map((job) => {
             return {
+              id: job.id,
               title: job.title,
               description: job?.company?.company_name ?? '',
               endline: `${job.salary} THB`,
-              goto: `url`,
+              goto: `/job/${job.id}`,
             };
           })}
         />
