@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  nginx:
+    container_name: 'seekajob-frontend'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:.
+    env_file:
+      - .env
+    environment:
+      NODE_OPTIONS: '--max-old-space-size=4096'
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - seekajob-network
+networks:
+  seekajob-network:
