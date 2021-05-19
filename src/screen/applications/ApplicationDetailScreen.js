@@ -34,6 +34,15 @@ const ApplicationDetailScreen = () => {
     fetchAuthUser();
   }, [authSelector]);
 
+  const renderApprovedStatus = (status) => {
+    if (status === 1) {
+      return 'Approved';
+    } else if (status === 2) {
+      return 'Reject';
+    }
+    return 'Waiting';
+  };
+
   const handleChangeApprovedStatus = (status) => {
     const approved_status = status === application?.approved_status ? 0 : status;
     updateApplication({ id: id, approved_status }).then((res) => {
@@ -119,29 +128,41 @@ const ApplicationDetailScreen = () => {
               </Col>
               <Col className="mt-2"></Col>
             </Row>
+            <Row>
+              <Col className="mt-2">
+                Approved status
+                <p style={{ fontSize: 14 }} className="mt-2">
+                  {renderApprovedStatus(application?.approved_status ?? 0)}
+                </p>
+              </Col>
+            </Row>
           </Col>
         </Row>
-        <Row className="align-items-center">
-          <Col className="d-flex flex-wrap mt-3" style={{ gap: 10 }}>
-            <Button
-              variant={application?.approved_status === 2 ? 'primary' : 'outlined-dark'}
-              onClick={() => handleChangeApprovedStatus(2)}
-            >
-              Rejected
-            </Button>
-            <Button
-              variant={application?.approved_status === 1 ? 'primary' : 'outlined-dark'}
-              onClick={() => handleChangeApprovedStatus(1)}
-            >
-              Approved
-            </Button>
-            <LinkContainer to={`/application/${id}/appointment`}>
-              <Button variant="outlined-dark">
-                {application?.interview ? 'Edit Appointment' : 'Make Appointment'}
+        {auth?.user?.role === 'company' ? (
+          <Row className="align-items-center">
+            <Col className="d-flex flex-wrap mt-3" style={{ gap: 10 }}>
+              <Button
+                variant={application?.approved_status === 2 ? 'primary' : 'outlined-dark'}
+                onClick={() => handleChangeApprovedStatus(2)}
+              >
+                Rejected
               </Button>
-            </LinkContainer>
-          </Col>
-        </Row>
+              <Button
+                variant={application?.approved_status === 1 ? 'primary' : 'outlined-dark'}
+                onClick={() => handleChangeApprovedStatus(1)}
+              >
+                Approved
+              </Button>
+              <LinkContainer to={`/application/${id}/appointment`}>
+                <Button variant="outlined-dark">
+                  {application?.interview ? 'Edit Appointment' : 'Make Appointment'}
+                </Button>
+              </LinkContainer>
+            </Col>
+          </Row>
+        ) : (
+          <></>
+        )}
         <hr />
         {application?.interview ? (
           <>
